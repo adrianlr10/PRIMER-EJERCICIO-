@@ -1,0 +1,83 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/adrianlr10/PRIMER-EJERCICIO-/blob/main/EXAMEN%20SEGUNDO%20PARCIAL\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "\n",
+        "def simulador_vehiculo():\n",
+        "    try:\n",
+        "        distancia = int(input(\"Ingrese la distancia al obstáculo (en metros): \"))\n",
+        "    except ValueError:\n",
+        "        print(\"¡Error! Ingresa un número válido.\")\n",
+        "        return\n",
+        "\n",
+        "    velocidad = random.randint(10, 120)\n",
+        "\n",
+        "    if distancia <= 20 and velocidad > 60:\n",
+        "        accion = \"FRENADO DE EMERGENCIA\"\n",
+        "    elif 21 <= distancia <= 50:\n",
+        "        accion = \"DESACELERACIÓN PREVENTIVA\"\n",
+        "    else:\n",
+        "        accion = \"MANTENER CURSO NORMAL\"\n",
+        "\n",
+        "    print(\"\\n========================================\")\n",
+        "    print(\"REPORTE DEL VEHÍCULO AUTÓNOMO\")\n",
+        "    print(\"========================================\")\n",
+        "    print(f\"Distancia ingresada: {distancia} metros\")\n",
+        "    print(f\"Velocidad simulada: {velocidad} km/h\")\n",
+        "    print(f\"Acción del sistema: {accion}\")\n",
+        "    print(\"========================================\")\n",
+        "\n",
+        "\n",
+        "def menu_principal():\n",
+        "    while True:\n",
+        "        print(\"\\n--- SISTEMA DE CONTROL AUTOMOTRIZ ---\")\n",
+        "        print(\"1. Ejecutar prueba de frenado\")\n",
+        "        print(\"2. Salir del programa\")\n",
+        "\n",
+        "        opcion = input(\"Seleccione una opción: \")\n",
+        "\n",
+        "        if opcion == \"1\":\n",
+        "            simulador_vehiculo()\n",
+        "        elif opcion == \"2\":\n",
+        "            print(\"Programa finalizado.\")\n",
+        "            break\n",
+        "        else:\n",
+        "            print(\"Opción inválida. Intente nuevamente.\")\n",
+        "\n",
+        "\n",
+        "# Programa principal\n",
+        "menu_principal()"
+      ],
+      "metadata": {
+        "id": "FPinJmGxys-P"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "toc_visible": true,
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
